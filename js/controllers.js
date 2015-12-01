@@ -90,7 +90,7 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 			// angular.element(".danweilist").append(mobileDialogElement);
 			// angular.element(".codiv").remove();
 			// $scope.txtGo=$compile("openPopover($event)")($scope)
-			// $scope.txt="提交"
+			// $scope.txt="提交1"
 		};
 	}
 	//有时，比如当容器尺寸发生变化时，需要调用update()方法重绘幻灯片。
