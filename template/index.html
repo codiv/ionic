@@ -1,32 +1,102 @@
-<ion-header-bar class="bar-positive">
+<ion-header-bar class="bar-assertive">
 	<a ng-click="backGo()" class="button icon-left ion-ios-arrow-left button-clear button-light"></a>
-	<h1 class="title">每日一练{{num}}/{{total}}</h1>
+	<h1 class="title">每日一练</h1>
 	<a class="button icon-right ion-ios-gear-outline button-clear button-light"></a>
 </ion-header-bar>
 <ion-content>
+	<div class="isBar">
+		<h3>单选题</h3>
+		<span>{{num}}/{{total}}</span>
+	</div>
 	<div id="content">
 		<ion-slide-box on-slide-changed="go_changed(index)"  active-slide="index" pager-click="go(index)" show-pager="false">
-			<ion-slide ng-click="goNext()">1111</ion-slide>
-			<ion-slide ng-click="goNext()">2222</ion-slide>
-			<ion-slide ng-click="goNext()">3333</ion-slide>
-			<ion-slide ng-click="goNext()">4444</ion-slide>
-			<ion-slide ng-click="goNext()">5555</ion-slide>
-			<ion-slide ng-click="goNext()">6666</ion-slide>
+			<ion-slide>
+				<div class="issue">
+					<dl>						
+						<dt>
+							攀比效应是指社会经济活动中某些相关的经济变量之间或经济利益主体在利益分配方面存在的相互影响，轮番推进的现象。根据上述定义，下列属于攀比效应的是( )。
+						</dt>
+						<dd ng-click="goNext()"><i>A</i><p>甲和乙在比谁的妻子漂亮，并约定输者请对方喝酒</p></dd>
+						<dd ng-click="goNext()"><i>B</i><p>省公安厅比较两县公安局抓获小偷数量后，认为甲县治安良好</p></dd>
+						<dd ng-click="goNext()"><i>C</i><p>甲公司技术人员到乙公司车间参观，暗下决心要向乙公司学习</p></dd>
+						<dd ng-click="goNext()"><i>D</i><p>企业职工在工资收入方面互相对比，并要求本单位上调工资，增加收入</p></dd>
+					</dl>
+				</div>					
+			</ion-slide>
+			<ion-slide>
+				<div class="issue">
+					<dl>						
+						<dt>
+							攀比效应是指社会经济活动中某些相关的经济变量之间或经济利益主体在利益分配方面存在的相互影响，轮番推进的现象。根据上述定义，下列属于攀比效应的是( )。
+						</dt>
+						<dd ng-click="goNext()"><i>A</i><p>甲和乙在比谁的妻子漂亮，并约定输者请对方喝酒</p></dd>
+						<dd ng-click="goNext()"><i>B</i><p>省公安厅比较两县公安局抓获小偷数量后，认为甲县治安良好</p></dd>
+						<dd ng-click="goNext()"><i>C</i><p>甲公司技术人员到乙公司车间参观，暗下决心要向乙公司学习</p></dd>
+						<dd ng-click="goNext()"><i>D</i><p>企业职工在工资收入方面互相对比，并要求本单位上调工资，增加收入</p></dd>
+					</dl>
+				</div>					
+			</ion-slide>
+			<ion-slide>
+				<div class="issue">
+					<dl>						
+						<dt>
+							攀比效应是指社会经济活动中某些相关的经济变量之间或经济利益主体在利益分配方面存在的相互影响，轮番推进的现象。根据上述定义，下列属于攀比效应的是( )。
+						</dt>
+						<dd ng-click="goNext()"><i>A</i><p>甲和乙在比谁的妻子漂亮，并约定输者请对方喝酒</p></dd>
+						<dd ng-click="goNext()"><i>B</i><p>省公安厅比较两县公安局抓获小偷数量后，认为甲县治安良好</p></dd>
+						<dd ng-click="goNext()"><i>C</i><p>甲公司技术人员到乙公司车间参观，暗下决心要向乙公司学习</p></dd>
+						<dd ng-click="goNext()"><i>D</i><p>企业职工在工资收入方面互相对比，并要求本单位上调工资，增加收入</p></dd>
+					</dl>
+				</div>					
+			</ion-slide>
+			<ion-slide>
+				<div class="issue">
+					<dl>						
+						<dt>
+							攀比效应是指社会经济活动中某些相关的经济变量之间或经济利益主体在利益分配方面存在的相互影响，轮番推进的现象。根据上述定义，下列属于攀比效应的是( )。
+						</dt>
+						<dd ng-click="goNext()"><i>A</i><p>甲和乙在比谁的妻子漂亮，并约定输者请对方喝酒</p></dd>
+						<dd ng-click="goNext()"><i>B</i><p>省公安厅比较两县公安局抓获小偷数量后，认为甲县治安良好</p></dd>
+						<dd ng-click="goNext()"><i>C</i><p>甲公司技术人员到乙公司车间参观，暗下决心要向乙公司学习</p></dd>
+						<dd ng-click="goNext()"><i>D</i><p>企业职工在工资收入方面互相对比，并要求本单位上调工资，增加收入</p></dd>
+					</dl>
+				</div>					
+			</ion-slide>
+			<ion-slide>
+				<div class="issue">
+					<dl>						
+						<dt>
+							攀比效应是指社会经济活动中某些相关的经济变量之间或经济利益主体在利益分配方面存在的相互影响，轮番推进的现象。根据上述定义，下列属于攀比效应的是( )。
+						</dt>
+						<dd ng-click="goNext()"><i>A</i><p>甲和乙在比谁的妻子漂亮，并约定输者请对方喝酒</p></dd>
+						<dd ng-click="goNext()"><i>B</i><p>省公安厅比较两县公安局抓获小偷数量后，认为甲县治安良好</p></dd>
+						<dd ng-click="goNext()"><i>C</i><p>甲公司技术人员到乙公司车间参观，暗下决心要向乙公司学习</p></dd>
+						<dd ng-click="goNext()"><i>D</i><p>企业职工在工资收入方面互相对比，并要求本单位上调工资，增加收入</p></dd>
+					</dl>
+				</div>					
+			</ion-slide>
+			<ion-slide>
+				<div class="issue">
+					<dl>						
+						<dt>
+							攀比效应是指社会经济活动中某些相关的经济变量之间或经济利益主体在利益分配方面存在的相互影响，轮番推进的现象。根据上述定义，下列属于攀比效应的是( )。
+						</dt>
+						<dd ng-click="goNext()"><i>A</i><p>甲和乙在比谁的妻子漂亮，并约定输者请对方喝酒</p></dd>
+						<dd ng-click="goNext()"><i>B</i><p>省公安厅比较两县公安局抓获小偷数量后，认为甲县治安良好</p></dd>
+						<dd ng-click="goNext()"><i>C</i><p>甲公司技术人员到乙公司车间参观，暗下决心要向乙公司学习</p></dd>
+						<dd ng-click="goNext()"><i>D</i><p>企业职工在工资收入方面互相对比，并要求本单位上调工资，增加收入</p></dd>
+					</dl>
+				</div>					
+			</ion-slide>
 		</ion-silde-box>
 	</div>
-<!-- 	<div class="main">
-		<span ng-click="goTo(0)">1</span>
-		<span ng-click="goTo(1)">2</span>
-		<span ng-click="goTo(2)">3</span>
-		<span ng-click="goTo(3)">4</span>
-	</div> -->
 </ion-content>
 <ion-footer-bar class="bar-assertive">
 	<div class="buttons" ng-click="goPrev()">
 		<button class="button">上一题</button>
 	</div>
 	<h1 class="title"><button class="button" ng-click="openPopover($event)">答题卡</button></h1>
-	<div class="buttons" ng-click="goNext()">
-		<button class="button">下一题</button>
+	<div class="buttons codiv">
+		<button class="button" ng-click="{{txtGo}}">{{txt}}</button>
 	</div>
 </ion-footer-bar>

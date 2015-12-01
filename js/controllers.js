@@ -48,13 +48,15 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 		obj.dataset.codiv=g;
 	}
 })
-.controller('itemTest', ['$scope','$ionicSlideBoxDelegate','$ionicBackdrop','$ionicPopover', function($scope,$ionicSlideBoxDelegate,$ionicBackdrop,$ionicPopover){
+.controller('itemTest', function($scope,$ionicSlideBoxDelegate,$ionicBackdrop,$ionicPopover,$timeout,$compile){
 	// angular.element(".box>ul>li").click(function(){
 	// 	console.log(112)
 	// });
 
 	$scope.num=1;
 	$scope.total=6;
+	$scope.txtGo="goNext()"
+	$scope.txt="下一题"
 	// $scope.total=$ionicSlideBoxDelegate.slidesCount(); //取得幻灯的总数
 
 	//pager-click="go(index)" 点击圆点跳转对应幻灯
@@ -75,15 +77,27 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 	//下一页
 	$scope.goNext=function(){
 		$ionicSlideBoxDelegate.next();
+		//如果是最后一题则弹出答题卡
+		
+		console.log(angular.element(".codiv"))
+		if ($scope.num == $ionicSlideBoxDelegate.slidesCount() ) {
+			// $scope.openPopover();
+
+			// var name = data.list[k].name;
+			// var html = '<a class="item dwitem" ng-click=selectDanWei("' + name.toString() + '")>' + data.list[k].name + '</a>';
+			// var template = angular.element(html);
+			// var mobileDialogElement = $compile(template)($scope);
+			// angular.element(".danweilist").append(mobileDialogElement);
+			// angular.element(".codiv").remove();
+			// $scope.txtGo=$compile("openPopover($event)")($scope)
+			// $scope.txt="提交"
+		};
 	}
 	//有时，比如当容器尺寸发生变化时，需要调用update()方法重绘幻灯片。
 	$ionicSlideBoxDelegate.update();
 
-	// $scope.goCart=function(){
-	// 	$ionicBackdrop.retain();
-	// }
+	// 弹窗答题卡
 
-	// .fromTemplateUrl() 方法
 	$ionicPopover.fromTemplateUrl('template/card.html', {
 		scope: $scope
 	}).then(function(popover) {
@@ -97,7 +111,7 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 		$scope.goTo(a);
 	};
 
-}])
+})
 
 
 

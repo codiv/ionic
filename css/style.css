@@ -1,3 +1,4 @@
+body{background-color:#FFF;}
 /* starry */
 #content { position: relative; width: 16rem; margin: 0 auto; }
 
@@ -19,9 +20,20 @@
 #btn-group a { float: left; display: block; margin: 0.44rem 0.859rem; position: relative; }
 #btn-group a img { width: 2.25rem; }
 
-.slider-slide{height:7.5rem; width:16rem; padding:0 0.5rem; border: 1px solid #dedede;}
-/*.slider-slide[data-index]:nth-child(2n){background-color:red}*/
-.main{padding-top:0.5rem; }
-.main span{width:2rem; height:2rem; line-height:2rem; text-align: center; background-color:#387ef5; margin:0.5rem 0.5rem; float: left; color:#FFF; cursor: pointer;}
+.slider-slide{width:16rem;}
+.main{padding:0.4rem 0 0 0.2rem; }
+.main span{width:1.5rem; height:1.5rem; line-height:1.5rem; text-align: center; border: 1px solid #ccc; border-radius:0.1rem; margin:0.5rem 0.5rem; float: left; color:#444; cursor: pointer;}
 .popover{width:15.47rem;}
 .title .button{vertical-align:2px!important;}
+
+.isBar{height:1.8rem; line-height:1.8rem; padding:0 0.5rem; margin-bottom:0.2rem; border-bottom: 1px solid #e8e7ec; background-color:#f8f8f8; box-shadow: 1px 1px 2px #f1f1f1;}
+.isBar h3{width:8rem; float: left; font-size:0.71rem; color:#ef473a; padding-top:0.5rem;}
+.isBar span{float: right; width:4rem; font-size:0.71rem; color:#444; text-align: right; padding-right:0.2rem;}
+
+.issue{font-size:0.71rem; color:#333;}
+.issue dl dt{font-weight:500; line-height:1.4rem; text-indent:1.42rem; padding:0 0.5rem 0.5rem 0.5rem; }
+.issue dl dd{line-height:1.2rem;padding:0.3rem 0.5rem; cursor: pointer; position: relative;}
+.issue dl dd:after{ display:block;visibility:hidden;clear:both;height:0;content:'.';}
+.issue dl dd i{width:1rem; height:1rem; line-height:1rem; font-size:0.53rem; color:#FFF; position: absolute; top:50%; left:0.5rem; margin-top:-0.5rem; border-radius:50%; background-color:#ccc; text-align:center;}
+.issue dl dd p{width:15rem; padding-left:1.2rem; float: left; font-size:0.53rem;  display:block; line-height:1rem; margin:0;}
+.issue dl dd:nth-child(2n){background-color:#f5f5f5;}
