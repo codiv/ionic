@@ -1,0 +1,32 @@
+<ion-header-bar class="bar-positive">
+	<a ng-click="backGo()" class="button icon-left ion-ios-arrow-left button-clear button-light"></a>
+	<h1 class="title">每日一练{{num}}/{{total}}</h1>
+	<a class="button icon-right ion-ios-gear-outline button-clear button-light"></a>
+</ion-header-bar>
+<ion-content>
+	<div id="content">
+		<ion-slide-box on-slide-changed="go_changed(index)"  active-slide="index" pager-click="go(index)" show-pager="false">
+			<ion-slide ng-click="goNext()">1111</ion-slide>
+			<ion-slide ng-click="goNext()">2222</ion-slide>
+			<ion-slide ng-click="goNext()">3333</ion-slide>
+			<ion-slide ng-click="goNext()">4444</ion-slide>
+			<ion-slide ng-click="goNext()">5555</ion-slide>
+			<ion-slide ng-click="goNext()">6666</ion-slide>
+		</ion-silde-box>
+	</div>
+<!-- 	<div class="main">
+		<span ng-click="goTo(0)">1</span>
+		<span ng-click="goTo(1)">2</span>
+		<span ng-click="goTo(2)">3</span>
+		<span ng-click="goTo(3)">4</span>
+	</div> -->
+</ion-content>
+<ion-footer-bar class="bar-assertive">
+	<div class="buttons" ng-click="goPrev()">
+		<button class="button">上一题</button>
+	</div>
+	<h1 class="title"><button class="button" ng-click="openPopover($event)">答题卡</button></h1>
+	<div class="buttons" ng-click="goNext()">
+		<button class="button">下一题</button>
+	</div>
+</ion-footer-bar>
