@@ -48,7 +48,24 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 		obj.dataset.codiv=g;
 	}
 })
-.controller('itemTest', function($scope,$ionicSlideBoxDelegate,$ionicBackdrop,$ionicPopover,$timeout,$compile){
+.controller("indexMain",function($scope,$http,$state,$ionicSlideBoxDelegate,userInfo){
+	$scope.banner=[];
+	$http({
+		method:"GET",
+		url:"data/GetIndexSlides.json"
+	}).success(function(data){
+		if (data.error==0) {
+			//JSON.stringify()用来将对象序列化为JSON字符串
+			//JSON.parse() 用来将JSON数据解析为js对象
+			userInfo.addLong('bannerImg', JSON.stringify(data.list));
+			$scope.banner = JSON.parse(userInfo.wl.bannerImg);
+			$ionicSlideBoxDelegate.update();//update()重新调整参数
+		};
+	}).error(function(){
+		console.log(data);
+	});	
+})
+.controller('itemTest', function($scope,$ionicSlideBoxDelegate,$ionicBackdrop,$ionicPopover,$timeout,$compile,$ionicModal,userInfo){
 	$scope.num=1;
 	$scope.total=6;//$ionicSlideBoxDelegate.slidesCount(); //取得题目的总数
 	//当前题数
@@ -129,11 +146,15 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 		// 	var str = JSON.stringify(sid); 
 		// 	window.localStorage.setItem("id",str);
 		// };
-		var sid = { 1:'A',2:'B' }
-			// sid += id
-		var str = JSON.stringify(sid); 
-		window.localStorage.setItem("id",str);
-		console.log(window.localStorage)
+		// window.localStorage.clear()
+		$scope.tasks=window.localStorage.getItem("info")
+		// console.log(aa)
+		// var sid = { 1:'A' }
+		var uid=$scope.tasks.push("{ 1:'A' }")
+		// var str = JSON.stringify(uid); 
+		console.log(uid)
+		// userInfo.add("info",str)
+		// console.log(window.localStorage)
 	}
 })
 

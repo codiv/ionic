@@ -20,6 +20,16 @@ body{background-color:#FFF;}
 #btn-group a { float: left; display: block; margin: 0.44rem 0.859rem; position: relative; }
 #btn-group a img { width: 2.25rem; }
 
+.list-tab{width:16rem;}
+.list-tab li{width:8rem; height:2.67rem;  float: left; position: relative;}
+.list-tab li a{border-right:1px solid #efefef; color:#525252; text-decoration:none; border-bottom: 1px solid #efefef; height:2.67rem; line-height:2.67rem; width:8rem; padding-left:3rem; font-size:0.71rem; display:inline-block;}
+.list-tab li a::before{height:1.86rem; width:1.86rem; top:0.45rem; margin-left:-3.2rem; left:50%;  content:""; display:block; position: absolute;  background:url(../img/01.png) no-repeat 0 0; background-size:1.68rem 1.68rem; }
+.list-tab li.in-zj a::before{background-image:url(../img/02.png);}
+.list-tab li.in-mr a::before{background-image:url(../img/03.png);}
+.list-tab li.in-ln a::before{background-image:url(../img/04.png);}
+
+.flashBox{width:16rem; height:7.2rem;}
+
 .slider-slide{width:16rem;}
 .main{padding:0.4rem 0 0 0.2rem; }
 .main span{width:1.5rem; height:1.5rem; line-height:1.5rem; text-align: center; border: 1px solid #ccc; border-radius:0.1rem; margin:0.5rem 0.5rem; float: left; color:#444; cursor: pointer;}

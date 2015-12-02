@@ -1,0 +1,40 @@
+{
+    "error": 0,
+    "info": "",
+    "list": [
+        {
+            "id": "75",
+            "img": "img/01.jpg",
+            "url": "https://lachapelle.tmall.com/shop/view_shop.htm?spm=0.0.0.0.lxqeY0&",
+            "title": "拉夏贝尔",
+            "hide": "0",
+            "addtime": "1447303589",
+            "sort": "4",
+            "cid": "4"
+        },
+        {
+            "id": "73",
+            "img": "img/02.jpg",
+            "url": "https://handuyishe.tmall.com/shop/view_shop.htm",
+            "title": "韩都衣舍",
+            "hide": "0",
+            "addtime": "1447303012",
+            "sort": "2",
+            "cid": "4"
+        },
+        {
+            "id": "74",
+            "img": "img/03.jpg",
+            "url": "https://inman.tmall.com/shop/view_shop.htm",
+            "title": "茵曼",
+            "hide": "0",
+            "addtime": "1447303475",
+            "sort": "0",
+            "cid": "4"
+        }
+    ],
+    "webchat": 1,
+    "ten_yuan_url": "http://9.zhemai.com",
+    "wxsharetitle": "发现一个在淘宝购物可以额外返钱的APP,每单返5%，很省钱",
+    "activeimg": "http://m2.cosjii.com/img/active-back.png"
+}

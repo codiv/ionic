@@ -7,7 +7,7 @@ Created  by codiv on 15-11-14
 ionic：ionic的;
 myapp.controller：创建的myapp.controller，在controller.js里找到;
 */
-var app=angular.module('myapp', ['ionic','myapp.controller']);
+var app=angular.module('myapp', ['ionic','myapp.controller','myapp.services']);
 
 app.config(function($stateProvider,$urlRouterProvider){
 	//获取本地localStorage的值，判断默认页面，启动画面
@@ -21,6 +21,11 @@ app.config(function($stateProvider,$urlRouterProvider){
 	.state("index",{
 		url:"/index",
 		templateUrl:"template/index.html",
+		controller:"indexMain"
+	})
+	.state("item",{
+		url:"/item",
+		templateUrl:"template/item.html",
 		controller:"itemTest"
 	})
 	.state("welcome.w_page",{
