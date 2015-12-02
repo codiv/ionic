@@ -49,55 +49,41 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 	}
 })
 .controller('itemTest', function($scope,$ionicSlideBoxDelegate,$ionicBackdrop,$ionicPopover,$timeout,$compile){
-	// angular.element(".box>ul>li").click(function(){
-	// 	console.log(112)
-	// });
-
 	$scope.num=1;
-	$scope.total=6;
-	$scope.txtGo="goNext()"
-	$scope.txt="下一题"
-	// $scope.total=$ionicSlideBoxDelegate.slidesCount(); //取得幻灯的总数
-
-	//pager-click="go(index)" 点击圆点跳转对应幻灯
-	$scope.go=function(index){
-		$ionicSlideBoxDelegate.slide(index);
-	};
-	$scope.goTo=function(a){
-		$ionicSlideBoxDelegate.slide(a)
+	$scope.total=6;//$ionicSlideBoxDelegate.slidesCount(); //取得题目的总数
+	//当前题数
+	$scope.goChanged=function(index){
+		$scope.num=index+1; 
 	}
-	//当前页数
-	$scope.go_changed=function(index){
-		$scope.num=index+1;
-	}
-	//上一页
+	//上一题
 	$scope.goPrev=function(){
 		$ionicSlideBoxDelegate.previous();
+		//注意：如要用angular.element 则要导入angular与jq核心库，
+		if ($scope.num !== $ionicSlideBoxDelegate.slidesCount()) {
+			var html = '<button class="button" ng-click="goNext()">下一题</button>';
+			$scope.operation(html);
+		}
 	}
-	//下一页
+	//下一题
 	$scope.goNext=function(){
 		$ionicSlideBoxDelegate.next();
-		//如果是最后一题则弹出答题卡
-		
-		console.log(angular.element(".codiv"))
 		if ($scope.num == $ionicSlideBoxDelegate.slidesCount() ) {
-			// $scope.openPopover();
-
-			// var name = data.list[k].name;
-			// var html = '<a class="item dwitem" ng-click=selectDanWei("' + name.toString() + '")>' + data.list[k].name + '</a>';
-			// var template = angular.element(html);
-			// var mobileDialogElement = $compile(template)($scope);
-			// angular.element(".danweilist").append(mobileDialogElement);
-			// angular.element(".codiv").remove();
-			// $scope.txtGo=$compile("openPopover($event)")($scope)
-			// $scope.txt="提交1"
-		};
+			var html = '<button class="button" ng-click="openPopover($event)">交试卷</button>';
+			$scope.operation(html);
+		}
 	}
-	//有时，比如当容器尺寸发生变化时，需要调用update()方法重绘幻灯片。
-	$ionicSlideBoxDelegate.update();
+	$ionicSlideBoxDelegate.update();//有时，比如当容器尺寸发生变化时，需要调用update()方法重绘幻灯片。
+
+	//注意：如要用angular.element 则要导入angular与jq核心库，
+	$scope.operation=function(html){
+		angular.element(".operation .button").remove();
+		//如动态添加元素带有事件，则用$compile()重新编译，否则点击事件无效
+		var template = angular.element(html);
+		var mobileDialogElement = $compile(template)($scope);
+		angular.element(".operation").append(mobileDialogElement);
+	}
 
 	// 弹窗答题卡
-
 	$ionicPopover.fromTemplateUrl('template/card.html', {
 		scope: $scope
 	}).then(function(popover) {
@@ -105,12 +91,50 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 	});
 	$scope.openPopover = function($event) {
 		$scope.popover.show($event);
+		// window.localStorage.clear()
+		var id=window.localStorage.getItem("id")
+		console.log(id);
+		// console.log(angular.element('.main span').html())
+		// var angular.element('.main span')
+		// for (var i = 0; i < angular.element('.main span').length; i++) {
+		// 	angular.element('.main span')[i]
+		// 	 $scope.selectedRow = row;
+		// };
 	};
+	//题目跳转
 	$scope.goTod = function(a) {
 		$scope.popover.hide();
 		$scope.goTo(a);
 	};
-
+	$scope.goTo=function(a){
+		$ionicSlideBoxDelegate.slide(a)
+		if ($scope.num !== $ionicSlideBoxDelegate.slidesCount()) {
+			var html = '<button class="button" ng-click="goNext()">下一题</button>';
+			$scope.operation(html);
+		};
+	}
+	//选中答案
+	$scope.theAnswer=function(id,n){
+		$scope.selectedRow = n;
+		// console.log(id)
+		// console.log(a)
+		// var uid=new Array()
+		//       uid=window.localStorage.getItem("id")
+		//       console.log(uid)
+		// if ( uid!=null ) {
+		// 	// var sid = uid.push(id);
+		// 	window.localStorage.setItem("id",id);
+		// }else{
+		// 	var sid = ['1','2','3'];
+		// 	var str = JSON.stringify(sid); 
+		// 	window.localStorage.setItem("id",str);
+		// };
+		var sid = { 1:'A',2:'B' }
+			// sid += id
+		var str = JSON.stringify(sid); 
+		window.localStorage.setItem("id",str);
+		console.log(window.localStorage)
+	}
 })
 
 

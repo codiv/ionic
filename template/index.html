@@ -9,17 +9,17 @@
 		<span>{{num}}/{{total}}</span>
 	</div>
 	<div id="content">
-		<ion-slide-box on-slide-changed="go_changed(index)"  active-slide="index" pager-click="go(index)" show-pager="false">
+		<ion-slide-box on-slide-changed="goChanged(index)"  active-slide="index" show-pager="false">
 			<ion-slide>
 				<div class="issue">
 					<dl>						
 						<dt>
 							攀比效应是指社会经济活动中某些相关的经济变量之间或经济利益主体在利益分配方面存在的相互影响，轮番推进的现象。根据上述定义，下列属于攀比效应的是( )。
 						</dt>
-						<dd ng-click="goNext()"><i>A</i><p>甲和乙在比谁的妻子漂亮，并约定输者请对方喝酒</p></dd>
-						<dd ng-click="goNext()"><i>B</i><p>省公安厅比较两县公安局抓获小偷数量后，认为甲县治安良好</p></dd>
-						<dd ng-click="goNext()"><i>C</i><p>甲公司技术人员到乙公司车间参观，暗下决心要向乙公司学习</p></dd>
-						<dd ng-click="goNext()"><i>D</i><p>企业职工在工资收入方面互相对比，并要求本单位上调工资，增加收入</p></dd>
+						<dd ng-click='theAnswer (1,"A",1)' ng-class='{active01:1==selectedRow}'><i>A</i><p>甲和乙在比谁的妻子漂亮，并约定输者请对方喝酒</p></dd>
+						<dd ng-click='theAnswer (2,"B",2)' ng-class='{active01:2==selectedRow}'><i>B</i><p>省公安厅比较两县公安局抓获小偷数量后，认为甲县治安良好</p></dd>
+						<dd ng-click='theAnswer (3,"C",3)' ng-class='{active01:3==selectedRow}'><i>C</i><p>甲公司技术人员到乙公司车间参观，暗下决心要向乙公司学习</p></dd>
+						<dd ng-click='theAnswer (4,"D",4)' ng-class='{active01:4==selectedRow}'><i>D</i><p>企业职工在工资收入方面互相对比，并要求本单位上调工资，增加收入</p></dd>
 					</dl>
 				</div>					
 			</ion-slide>
@@ -96,7 +96,7 @@
 		<button class="button">上一题</button>
 	</div>
 	<h1 class="title"><button class="button" ng-click="openPopover($event)">答题卡</button></h1>
-	<div class="buttons codiv">
-		<button class="button" ng-click="{{txtGo}}">{{txt}}</button>
+	<div class="buttons operation">
+		<button class="button" ng-click="goNext()">下一题</button>
 	</div>
 </ion-footer-bar>
