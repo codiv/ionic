@@ -131,29 +131,32 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 		};
 	}
 	//选中答案
-	$scope.theAnswer=function(id,n){
-		$scope.selectedRow = n;
-		// console.log(id)
-		// console.log(a)
-		// var uid=new Array()
-		//       uid=window.localStorage.getItem("id")
-		//       console.log(uid)
-		// if ( uid!=null ) {
-		// 	// var sid = uid.push(id);
-		// 	window.localStorage.setItem("id",id);
-		// }else{
-		// 	var sid = ['1','2','3'];
-		// 	var str = JSON.stringify(sid); 
-		// 	window.localStorage.setItem("id",str);
-		// };
+	$scope.theAnswer=function(uid,n){
 		// window.localStorage.clear()
-		$scope.tasks=window.localStorage.getItem("info")
-		// console.log(aa)
-		// var sid = { 1:'A' }
-		var uid=$scope.tasks.push("{ 1:'A' }")
-		// var str = JSON.stringify(uid); 
-		console.log(uid)
-		// userInfo.add("info",str)
+		$scope.selectedRow = n;
+		if (userInfo.wl.getItem("info") == null) {
+			$scope.tasks = [{
+				id:uid,
+				as:n				
+			}];
+			userInfo.add("info",JSON.stringify($scope.tasks));
+		}else{
+			$scope.tasks = JSON.parse(userInfo.wl.getItem("info"))
+			console.log($scope.tasks)
+			// console.log($scope.tasks[0].id)
+			// console.log($scope.tasks[uid].indexOf())
+			for (var i = 0; i < $scope.tasks.length; i++) {
+				if ($scope.tasks[i].id == uid) {
+					console.log("有"+$scope.tasks[i].id)
+					return;
+				}
+			};
+			// $scope.tasks.push({
+			// 	id:uid,
+			// 	as:n
+			// });
+			// userInfo.add("info",JSON.stringify($scope.tasks));
+		};
 		// console.log(window.localStorage)
 	}
 })
