@@ -109,9 +109,10 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 	$scope.openPopover = function($event) {
 		$scope.popover.show($event);
 		// window.localStorage.clear()
-		var id=window.localStorage.getItem("id")
-		console.log(id);
-		// console.log(angular.element('.main span').html())
+		// var id=window.localStorage.getItem("id")
+		// console.log(id);
+		// console.log(angular.element('.main>span').data().html())
+		angular.element('.main').find('data-id="1"').addClass('active01');
 		// var angular.element('.main span')
 		// for (var i = 0; i < angular.element('.main span').length; i++) {
 		// 	angular.element('.main span')[i]
@@ -142,22 +143,21 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 			userInfo.add("info",JSON.stringify($scope.tasks));
 		}else{
 			$scope.tasks = JSON.parse(userInfo.wl.getItem("info"))
-			console.log($scope.tasks)
-			// console.log($scope.tasks[0].id)
-			// console.log($scope.tasks[uid].indexOf())
 			for (var i = 0; i < $scope.tasks.length; i++) {
+				//查找数组$scope.tasks里对像id的值是否存在传进来的uid，如果存在替换对像里的值
 				if ($scope.tasks[i].id == uid) {
-					console.log("有"+$scope.tasks[i].id)
+					//splice(0,1,{A})：替换一个下标为0的数组为{A}
+					//splice(1,2)：从下标为1起，删除两个元素
+					$scope.tasks.splice(i,1,{id:uid,as:n})
 					return;
 				}
 			};
-			// $scope.tasks.push({
-			// 	id:uid,
-			// 	as:n
-			// });
-			// userInfo.add("info",JSON.stringify($scope.tasks));
+			$scope.tasks.push({
+				id:uid,
+				as:n
+			});
+			userInfo.add("info",JSON.stringify($scope.tasks));
 		};
-		// console.log(window.localStorage)
 	}
 })
 
