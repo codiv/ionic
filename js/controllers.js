@@ -108,17 +108,16 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 	});
 	$scope.openPopover = function($event) {
 		$scope.popover.show($event);
-		// window.localStorage.clear()
-		// var id=window.localStorage.getItem("id")
-		// console.log(id);
-		// console.log(angular.element('.main>span').data().html())
-		angular.element('.main').find('data-id="1"').addClass('active01');
-		// var angular.element('.main span')
-		// for (var i = 0; i < angular.element('.main span').length; i++) {
-		// 	angular.element('.main span')[i]
-		// 	 $scope.selectedRow = row;
-		// };
+		angular.element('.main>span').removeClass('active01');
+		$scope.sid=JSON.parse(userInfo.wl.getItem("info"))
+		for (var i = 0; i < $scope.sid.length; i++) {
+			angular.element('.main>span[data-id='+$scope.sid[i].id+']').addClass('active01');
+		};
 	};
+	console.log(angular.element(".issue").html())
+		console.log(1111)
+	angular.element(".codiv>dd").bind('click', function() {
+	});
 	//题目跳转
 	$scope.goTod = function(a) {
 		$scope.popover.hide();
@@ -158,6 +157,7 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 			});
 			userInfo.add("info",JSON.stringify($scope.tasks));
 		};
+		console.log(userInfo.wl)
 	}
 })
 
