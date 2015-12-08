@@ -65,7 +65,18 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 		console.log(data);
 	});	
 })
-.controller('itemTest', function($scope,$ionicSlideBoxDelegate,$ionicBackdrop,$ionicPopover,$timeout,$compile,$ionicModal,userInfo){
+.controller('itemTest', function($scope,$http,$ionicSlideBoxDelegate,$ionicBackdrop,$ionicPopover,$timeout,$compile,$ionicModal,userInfo){
+	$scope.item=[];
+	$http({
+		method:"GET",
+		url:"data/item.json"
+	}).success(function(data){
+		// console.log(data)
+		userInfo.addLong("item",JSON.stringify(data.list));
+		$scope.item=JSON.parse(userInfo.wl.item);
+		$ionicSlideBoxDelegate.update();
+	})
+
 	$scope.num=1;
 	$scope.total=6;//$ionicSlideBoxDelegate.slidesCount(); //取得题目的总数
 	//当前题数
@@ -114,10 +125,6 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 			angular.element('.main>span[data-id='+$scope.sid[i].id+']').addClass('active01');
 		};
 	};
-	console.log(angular.element(".issue").html())
-		console.log(1111)
-	angular.element(".codiv>dd").bind('click', function() {
-	});
 	//题目跳转
 	$scope.goTod = function(a) {
 		$scope.popover.hide();
