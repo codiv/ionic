@@ -132,7 +132,6 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 	}
 	//选中答案
 	$scope.theAnswer=function(uid,n){
-		// window.localStorage.clear()
 		$scope.selectedRow = n;
 		if (userInfo.wl.getItem("info") == null) {
 			$scope.tasks = [{
@@ -157,7 +156,6 @@ app.controller("welcome",function($scope,$ionicModal,$state,$timeout){
 			});
 			userInfo.add("info",JSON.stringify($scope.tasks));
 		};
-		console.log(userInfo.wl)
 	}
 })
 
